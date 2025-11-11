@@ -11,3 +11,11 @@ Always ≥ 0,Handles larger values
 ##Function	NULL handling
 ft_memset	No check - let it crash (standard behavior)
 ft_memcpy	Check if (!dest && !src) for edge case
+
+##len vs size
+char src[] = "hello";
+// Memory layout:
+[h][e][l][l][o][\0]
+ 0  1  2  3  4  5    ← indices
+strlen(src) = 5      ✅ Does NOT count \0
+sizeof(src) = 6      ✅ Counts \0 (total bytes)
